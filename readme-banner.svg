@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0e12" />
+      <stop offset="50%" stop-color="#15171e" />
+      <stop offset="100%" stop-color="#0a0b0d" />
+    </linearGradient>
+    
+    <!-- Text Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#863bff" />
+      <stop offset="50%" stop-color="#47bfff" />
+      <stop offset="100%" stop-color="#863bff" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+      100% { opacity: 0.3; }
+    }
+    @keyframes slideText {
+      0% { transform: translateX(800px); }
+      100% { transform: translateX(-1000px); }
+    }
+    @keyframes titleGlow {
+      0%, 100% { fill: url(#textGrad); filter: drop-shadow(0 0 2px rgba(134,59,255,0.4)); }
+      50% { fill: #ffffff; filter: drop-shadow(0 0 10px rgba(71,191,255,0.8)); }
+    }
+    .grid-line {
+      stroke: #1e2230;
+      stroke-width: 1;
+      opacity: 0.4;
+    }
+    .pulse-dot {
+      fill: #ff3b30;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .marquee-text {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      fill: #a0a5b5;
+      animation: slideText 25s linear infinite;
+    }
+    .brand-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      animation: titleGlow 8s infinite alternate;
+    }
+    .sub-brand {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: 6px;
+      fill: #863bff;
+      font-weight: bold;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="250" fill="url(#bgGrad)" rx="16" />
+
+  <!-- Animated Grid Background -->
+  <g>
+    <line x1="50" y1="0" x2="50" y2="250" class="grid-line" />
+    <line x1="200" y1="0" x2="200" y2="250" class="grid-line" />
+    <line x1="600" y1="0" x2="600" y2="250" class="grid-line" />
+    <line x1="750" y1="0" x2="750" y2="250" class="grid-line" />
+    <line x1="0" y1="60" x2="800" y2="60" class="grid-line" />
+    <line x1="0" y1="190" x2="800" y2="190" class="grid-line" />
+  </g>
+
+  <!-- Glowing Background Circle -->
+  <circle cx="400" cy="125" r="90" fill="#863bff" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Main Center Header -->
+  <g transform="translate(400, 115)" text-anchor="middle">
+    <!-- Brand Name -->
+    <text y="0" class="brand-title">Apna News</text>
+    <!-- Subtitle -->
+    <text y="30" class="sub-brand">THE DAILY JOURNAL</text>
+  </g>
+
+  <!-- Ticker/Marquee Layer at Bottom -->
+  <rect y="205" width="800" height="30" fill="#0b0c0f" opacity="0.9" />
+  <line x1="0" y1="205" x2="800" y2="205" stroke="#863bff" stroke-width="1.5" />
+  <line x1="0" y1="235" x2="800" y2="235" stroke="#1e2230" stroke-width="1" />
+
+  <!-- Animated Marquee Text -->
+  <text y="225" class="marquee-text">
+    ⚡ BREAKING NEWS: AI-Powered Summarizer is now fully integrated • 🚀 Live Global Headlines Fallback active • 🎨 Modern Newspaper UI Refresh • 📊 Real-Time Analytics Dashboard updated • 🔒 Secured JWT Authentication active • 📰 Read bookmarks offline
+  </text>
+
+  <!-- Live Pulse Indicator -->
+  <circle cx="25" cy="30" r="5" class="pulse-dot" />
+  <text x="37" y="34" font-family="'Inter', system-ui, sans-serif" font-size="10px" font-weight="800" fill="#ff3b30" letter-spacing="1px">LIVE ENGINE ACTIVE</text>
+</svg>
