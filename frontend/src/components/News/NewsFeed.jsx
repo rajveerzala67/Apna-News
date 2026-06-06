@@ -118,7 +118,7 @@ export default function NewsFeed({ category = 'general', country = 'in', search 
 
   const featuredArticle = articles[0];
   const gridArticles = articles.slice(1);
-  const featuredDetailPath = `/article?url=${encodeURIComponent(featuredArticle.url)}&title=${encodeURIComponent(featuredArticle.title)}&category=${encodeURIComponent(featuredArticle.category || 'general')}`;
+  const featuredDetailPath = `/article?url=${encodeURIComponent(featuredArticle.url)}&title=${encodeURIComponent(featuredArticle.title)}&category=${encodeURIComponent(featuredArticle.category || 'general')}&urlToImage=${encodeURIComponent(featuredArticle.urlToImage || '')}`;
 
   return (
     <div className="space-y-10">

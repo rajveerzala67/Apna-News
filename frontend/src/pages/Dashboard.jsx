@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../context/AuthContext';
 import NewsCard from '../components/News/NewsCard';
@@ -134,14 +135,28 @@ export default function Dashboard() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         
         {/* Bookmarks Stat */}
-        <div className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 p-5 rounded-2xl shadow-sm text-center">
+        <div 
+          onClick={() => setActiveTab('bookmarks')}
+          className={`border p-5 rounded-2xl shadow-sm text-center cursor-pointer transition select-none ${
+            activeTab === 'bookmarks'
+              ? 'bg-blue-50/50 border-blue-200 dark:bg-zinc-800/40 dark:border-zinc-700'
+              : 'bg-white border-gray-100 hover:bg-gray-50/60 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800/40'
+          }`}
+        >
           <Bookmark className="h-5 w-5 mx-auto text-blue-500 mb-2" />
           <div className="text-xl sm:text-2xl font-serif font-black dark:text-white">{stats.totalBookmarks}</div>
           <div className="text-[10px] uppercase font-bold tracking-wider text-gray-400 mt-1">Bookmarks</div>
         </div>
 
         {/* Read History Count Stat */}
-        <div className="bg-white dark:bg-zinc-900 border border-gray-100 dark:border-zinc-800 p-5 rounded-2xl shadow-sm text-center">
+        <div 
+          onClick={() => setActiveTab('history')}
+          className={`border p-5 rounded-2xl shadow-sm text-center cursor-pointer transition select-none ${
+            activeTab === 'history'
+              ? 'bg-blue-50/50 border-blue-200 dark:bg-zinc-800/40 dark:border-zinc-700'
+              : 'bg-white border-gray-100 hover:bg-gray-50/60 dark:bg-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800/40'
+          }`}
+        >
           <BookOpen className="h-5 w-5 mx-auto text-green-500 mb-2" />
           <div className="text-xl sm:text-2xl font-serif font-black dark:text-white">{stats.totalArticlesRead}</div>
           <div className="text-[10px] uppercase font-bold tracking-wider text-gray-400 mt-1">Articles Read</div>
@@ -269,7 +284,7 @@ export default function Dashboard() {
                 ) : (
                   <div className="space-y-3 bg-white dark:bg-zinc-900 border dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm">
                     {history.map((item) => {
-                      const itemPath = `/article?url=${encodeURIComponent(item.url)}&title=${encodeURIComponent(item.title)}&category=${encodeURIComponent(item.category || 'general')}`;
+                      const itemPath = `/article?url=${encodeURIComponent(item.url)}&title=${encodeURIComponent(item.title)}&category=${encodeURIComponent(item.category || 'general')}&urlToImage=${encodeURIComponent(item.urlToImage || '')}`;
                       return (
                         <div
                           key={item._id}

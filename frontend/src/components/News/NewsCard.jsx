@@ -52,7 +52,7 @@ export default function NewsCard({ article }) {
     e.stopPropagation();
     
     // Construct detail page URL
-    const articleDetailLink = `${window.location.origin}/article?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&category=${encodeURIComponent(category || 'general')}`;
+    const articleDetailLink = `${window.location.origin}/article?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&category=${encodeURIComponent(category || 'general')}&urlToImage=${encodeURIComponent(urlToImage || '')}`;
     
     navigator.clipboard.writeText(articleDetailLink);
     setCopied(true);
@@ -62,7 +62,7 @@ export default function NewsCard({ article }) {
   // Safe image fallback
   const imageSrc = urlToImage || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop';
 
-  const detailPath = `/article?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&category=${encodeURIComponent(category || 'general')}`;
+  const detailPath = `/article?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&category=${encodeURIComponent(category || 'general')}&urlToImage=${encodeURIComponent(urlToImage || '')}`;
 
   return (
     <motion.div

@@ -122,7 +122,31 @@ export const getHeadlines = async (req, res) => {
       timeout: 2500
     });
 
-    return res.json({ success: true, articles: response.data.articles });
+    let articles = response.data.articles || [];
+    if (articles.length === 0) {
+      console.warn(`NewsAPI Headlines returned 0 articles for country=${country}, category=${category}. Trying global headlines fallback.`);
+      try {
+        const globalResponse = await axios.get('https://newsapi.org/v2/top-headlines', {
+          params: {
+            apiKey,
+            category: apiCat,
+            q: search || queryPlus || undefined,
+            pageSize: 30
+          },
+          timeout: 2500
+        });
+        articles = globalResponse.data.articles || [];
+      } catch (err) {
+        console.warn('Global headlines fallback fetch failed:', err.message);
+      }
+    }
+
+    if (articles.length === 0) {
+      console.warn(`NewsAPI Headlines returned 0 articles globally for category=${category}. Falling back to mock articles.`);
+      articles = getMockNews(category, country, search, sortBy);
+    }
+
+    return res.json({ success: true, articles });
   } catch (error) {
     console.warn('NewsAPI Headlines Fetch failed. Falling back to mock articles:', error.message);
     const articles = getMockNews(category, country, search, sortBy);
@@ -178,6 +202,11 @@ export const searchNews = async (req, res) => {
     // Filter by country if country matches (NewsAPI /everything doesn't support country param directly, must filter in code or query)
     if (country) {
       // NewsAPI doesn't have a direct country tag in /everything, we can do keyword search or return as-is
+    }
+
+    if (articles.length === 0) {
+      console.warn(`NewsAPI Search returned 0 articles for query="${q}". Falling back to mock articles.`);
+      articles = getMockNews(category, country, q, sortBy);
     }
 
     return res.json({ success: true, articles });
@@ -301,6 +330,19 @@ export const getPersonalizedFeed = async (req, res) => {
         });
         recommendedArticles = response.data.articles || [];
 
+        // If local country results are empty, fallback to global top headlines for that category
+        if (recommendedArticles.length === 0) {
+          const globalResponse = await axios.get('https://newsapi.org/v2/top-headlines', {
+            params: {
+              apiKey,
+              category: topCat,
+              pageSize: 15
+            },
+            timeout: 2500
+          });
+          recommendedArticles = globalResponse.data.articles || [];
+        }
+
         // If results are small, fetch for the second category and merge
         if (recommendedArticles.length < 8 && combinedCategories[1]) {
           const secondResponse = await axios.get('https://newsapi.org/v2/top-headlines', {
@@ -312,7 +354,27 @@ export const getPersonalizedFeed = async (req, res) => {
             },
             timeout: 2500
           });
-          recommendedArticles.push(...(secondResponse.data.articles || []));
+          let secondArticles = secondResponse.data.articles || [];
+          if (secondArticles.length === 0) {
+            const globalSecondResponse = await axios.get('https://newsapi.org/v2/top-headlines', {
+              params: {
+                apiKey,
+                category: combinedCategories[1],
+                pageSize: 10
+              },
+              timeout: 2500
+            });
+            secondArticles = globalSecondResponse.data.articles || [];
+          }
+          recommendedArticles.push(...secondArticles);
+        }
+
+        if (recommendedArticles.length === 0) {
+          console.warn('Personalized Live Fetch returned 0 articles, using mock recommendation.');
+          combinedCategories.forEach(cat => {
+            const catArticles = getMockNews(cat, 'in', '', 'publishedAt').slice(0, 4);
+            recommendedArticles.push(...catArticles);
+          });
         }
       } catch (err) {
         console.warn('Personalized Live Fetch failed, using mock recommendation:', err.message);

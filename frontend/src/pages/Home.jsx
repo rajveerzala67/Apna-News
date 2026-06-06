@@ -129,7 +129,7 @@ export default function Home() {
               ) : (
                 <div className="space-y-4">
                   {trending.map((t, idx) => {
-                    const detailLink = `/article?url=${encodeURIComponent(t.url)}&title=${encodeURIComponent(t.title)}&category=${encodeURIComponent(t.category || 'general')}`;
+                    const detailLink = `/article?url=${encodeURIComponent(t.url)}&title=${encodeURIComponent(t.title)}&category=${encodeURIComponent(t.category || 'general')}&urlToImage=${encodeURIComponent(t.urlToImage || '')}`;
                     return (
                       <div key={idx} className="flex space-x-3.5 pb-4 border-b border-gray-100 dark:border-zinc-800 last:border-0 last:pb-0 last:mb-0">
                         {t.urlToImage ? (

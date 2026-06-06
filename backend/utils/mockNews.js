@@ -5,49 +5,111 @@ const categoryImages = {
     'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop'
   ],
   business: [
     'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1542744094-3a31f103e35f?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1491336477066-31156b5e4f35?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1579532562111-3de21b0d24db?w=800&auto=format&fit=crop'
   ],
   sports: [
     'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1519766304817-4f37bda74a27?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1531415080290-bc9b00dac0ab?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1519766304817-4f37bda74a27?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1565992441121-4367c2967103?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1547941126-3d5323b218e6?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&auto=format&fit=crop'
   ],
   entertainment: [
     'https://images.unsplash.com/photo-1499364619118-29928580153f?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1460881680858-30d872d5b530?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1585647347483-22b66260dfff?w=800&auto=format&fit=crop'
   ],
   health: [
     'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1606166325012-904ff7299d4e?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop'
   ],
   science: [
     'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1530210120071-ec4d1a1350b9?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1564325724739-bae0bd08762c?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1554475901-4538ddfbccc2?w=800&auto=format&fit=crop'
   ],
   politics: [
     'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1508962914676-134849a727f0?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1577412647305-991150c7d163?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1507537362147-987ec35cd71e?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1521791136368-1a9b79c530a3?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1569025743873-ea3a9ae8a5a6?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1540910419-c914b4e470bc?w=800&auto=format&fit=crop'
   ],
   world: [
     'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&auto=format&fit=crop',
     'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=800&auto=format&fit=crop'
+    'https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop'
   ]
 };
 
@@ -284,13 +346,18 @@ const mockArticles = [
 
 // Generates fallback articles dynamically if a combination of category + country yields empty results
 // This ensures that clicking any category-country combination always produces engaging content.
-const generateDynamicArticles = (category, country, count = 5) => {
+const generateDynamicArticles = (category, country, count = 5, existingArticles = []) => {
   const titles = [
     `Rising Trends in ${category.charAt(0).toUpperCase() + category.slice(1)}: What Experts Are Saying`,
     `How Global Shift is Shaping ${category.charAt(0).toUpperCase() + category.slice(1)} Today`,
     `A Deep Dive into the Latest ${category.charAt(0).toUpperCase() + category.slice(1)} Developments`,
     `The Economic Impact of ${category.charAt(0).toUpperCase() + category.slice(1)} on Local Communities`,
-    `Future Outlook: What's Next for ${category.charAt(0).toUpperCase() + category.slice(1)} in the Coming Decades`
+    `Future Outlook: What's Next for ${category.charAt(0).toUpperCase() + category.slice(1)} in the Coming Decades`,
+    `Behind the Scenes: The Untold Story of ${category.charAt(0).toUpperCase() + category.slice(1)} Innovations`,
+    `Key Challenges Facing the ${category.charAt(0).toUpperCase() + category.slice(1)} Industry This Year`,
+    `How Digital Technology is Revolutionizing ${category.charAt(0).toUpperCase() + category.slice(1)}`,
+    `The Rising Global Influence of Modern ${category.charAt(0).toUpperCase() + category.slice(1)}`,
+    `Special Report: The New Era of ${category.charAt(0).toUpperCase() + category.slice(1)} in Developing Nations`
   ];
   
   const sources = [
@@ -302,19 +369,46 @@ const generateDynamicArticles = (category, country, count = 5) => {
   const authors = ['Aarav Patel', 'Jane Smith', 'David Jones', 'Yuki Tanaka', 'Marie Dubois'];
 
   const results = [];
-  const images = categoryImages[category] || categoryImages.world;
+  const images = [...(categoryImages[category] || categoryImages.world)];
+
+  // Seeded deterministic shuffle of the images based on category + country
+  const seedStr = `${category}-${country}`;
+  let seed = 0;
+  for (let sIdx = 0; sIdx < seedStr.length; sIdx++) {
+    seed = seedStr.charCodeAt(sIdx) + ((seed << 5) - seed);
+  }
+  
+  // Seeded LCG PRNG
+  const random = () => {
+    const x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+  };
+  
+  // Shuffle
+  for (let shuffleIdx = images.length - 1; shuffleIdx > 0; shuffleIdx--) {
+    const j = Math.floor(random() * (shuffleIdx + 1));
+    [images[shuffleIdx], images[j]] = [images[j], images[shuffleIdx]];
+  }
+
+  // Remove any images already used by existing/static articles on the page
+  const usedImages = new Set(existingArticles.map(a => a.urlToImage).filter(Boolean));
+  const availableImages = images.filter(img => !usedImages.has(img));
+  const finalImagePool = availableImages.length > 0 ? availableImages : images;
 
   for (let i = 0; i < count; i++) {
     const publishedTime = new Date();
     publishedTime.setHours(publishedTime.getHours() - (i * 4 + 2)); // Subtract hours
 
+    const titleText = titles[i % titles.length] + ` (Coverage in ${country.toUpperCase()})`;
+    const urlToImage = finalImagePool[i % finalImagePool.length];
+
     results.push({
       source: sources[i % sources.length],
       author: authors[i % authors.length],
-      title: titles[i % titles.length] + ` (Coverage in ${country.toUpperCase()})`,
+      title: titleText,
       description: `This is a featured report on the status of ${category} developments, showing localized trends and updates tailored for readers in ${country.toUpperCase()}.`,
       url: `https://apnanews.com/dynamic/${category}-${country}-${i}`,
-      urlToImage: images[i % images.length],
+      urlToImage: urlToImage,
       publishedAt: publishedTime.toISOString(),
       content: `In-depth analysis reveals how localized environments in ${country.toUpperCase()} are experiencing dynamic movements within the ${category} sector. Experts point out that regional policy adjustments combined with technological shifts are driving major changes that will impact local markets and consumers over the long term. Additional reviews are expected next quarter...`,
       category: category,
@@ -339,7 +433,7 @@ export const getMockNews = (category, country, search, sortBy) => {
 
   // If filtered is empty or too low, generate dynamic fallback articles so user always sees beautiful data
   if (filtered.length < 3 && category && country) {
-    const dynamic = generateDynamicArticles(category.toLowerCase(), country.toLowerCase(), 6);
+    const dynamic = generateDynamicArticles(category.toLowerCase(), country.toLowerCase(), 6, filtered);
     filtered = [...filtered, ...dynamic];
   }
 

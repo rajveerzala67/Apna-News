@@ -13,11 +13,13 @@ export default function ArticleDetail() {
   const url = searchParams.get('url');
   const title = searchParams.get('title');
   const category = searchParams.get('category') || 'general';
+  const queryUrlToImage = searchParams.get('urlToImage');
 
   const [articleDetails, setArticleDetails] = useState({
     title,
     url,
     category,
+    urlToImage: queryUrlToImage ? decodeURIComponent(queryUrlToImage) : '',
     source: { name: 'Editorial Desk' },
     author: 'Staff Correspondent',
     publishedAt: new Date().toISOString(),
@@ -61,7 +63,8 @@ export default function ArticleDetail() {
               ...searchRes.data.articles[0],
               title,
               url,
-              category
+              category,
+              urlToImage: prev.urlToImage || searchRes.data.articles[0].urlToImage
             }));
           }
         }
@@ -334,7 +337,7 @@ export default function ArticleDetail() {
             ) : (
               <div className="space-y-4">
                 {related.map((a, idx) => {
-                  const itemPath = `/article?url=${encodeURIComponent(a.url)}&title=${encodeURIComponent(a.title)}&category=${encodeURIComponent(a.category || 'general')}`;
+                  const itemPath = `/article?url=${encodeURIComponent(a.url)}&title=${encodeURIComponent(a.title)}&category=${encodeURIComponent(a.category || 'general')}&urlToImage=${encodeURIComponent(a.urlToImage || '')}`;
                   return (
                     <div key={idx} className="flex space-x-3.5 pb-4 border-b border-gray-100 dark:border-zinc-800 last:border-0 last:pb-0 last:mb-0">
                       {a.urlToImage && (

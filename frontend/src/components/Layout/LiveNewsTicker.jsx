@@ -45,7 +45,7 @@ export default function LiveNewsTicker() {
             <span key={index} className="inline-flex items-center mx-10 text-white hover:text-red-100 transition">
               <span className="w-1.5 h-1.5 bg-white rounded-full mr-2.5 inline-block"></span>
               {h.url ? (
-                <Link to={`/article?url=${encodeURIComponent(h.url)}&title=${encodeURIComponent(h.title)}&category=${encodeURIComponent(h.category || 'general')}`}>
+                <Link to={`/article?url=${encodeURIComponent(h.url)}&title=${encodeURIComponent(h.title)}&category=${encodeURIComponent(h.category || 'general')}&urlToImage=${encodeURIComponent(h.urlToImage || '')}`}>
                   {h.title}
                 </Link>
               ) : (
