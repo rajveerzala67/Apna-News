@@ -48,8 +48,12 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Apna News server successfully running on port ${PORT}`);
-  console.log(`📡 API URL: http://localhost:${PORT}`);
-  console.log(`💾 Database: ${global.isMockDB ? 'OFFLINE JSON MOCK DB' : 'ONLINE MONGODB'}`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Apna News server successfully running on port ${PORT}`);
+    console.log(`📡 API URL: http://localhost:${PORT}`);
+    console.log(`💾 Database: ${global.isMockDB ? 'OFFLINE JSON MOCK DB' : 'ONLINE MONGODB'}`);
+  });
+}
+
+export default app;
