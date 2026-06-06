@@ -1,0 +1,41 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+const ThemeContext = createContext();
+
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(() => {
+    // Check local storage or default to light theme
+    const savedTheme = localStorage.getItem('apna_news_theme');
+    return savedTheme || 'light';
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.style.backgroundColor = '#121212';
+    } else {
+      root.classList.remove('dark');
+      root.style.backgroundColor = '#fcfbf7';
+    }
+    localStorage.setItem('apna_news_theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};

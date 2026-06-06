@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #fcfbf7; /* Warm newsprint */
+    --bg-secondary: #f4f2eb;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border-color: #e5e7eb;
+    --glass-bg: rgba(252, 251, 247, 0.75);
+    --glass-border: rgba(229, 231, 235, 0.5);
+  }
+
+  .dark {
+    --bg-primary: #121212; /* Dark Mode base */
+    --bg-secondary: #1e1e1e;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: #262626;
+    --glass-bg: rgba(18, 18, 18, 0.75);
+    --glass-border: rgba(38, 38, 38, 0.5);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-serif-header {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Glassmorphism utility */
+.glassmorphism {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Live news ticker marquee keyframes */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-wrap {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 35s;
+}
+
+.ticker-content:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark Mode Input Text Color Fix */
+.dark input,
+.dark select,
+.dark textarea,
+.dark option {
+  color: #f9fafb !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #a1a1aa !important; /* Tailwind zinc-400 placeholder */
+}
+
+/* Scrollbar-Hide Utility class */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
