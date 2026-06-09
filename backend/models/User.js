@@ -34,7 +34,7 @@ const UserSchema = new mongoose.Schema({
     {
       title: String,
       description: String,
-      url: { type: String, unique: true },
+      url: { type: String },
       urlToImage: String,
       source: {
         name: String

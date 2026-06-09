@@ -70,6 +70,20 @@ const connectDB = async () => {
     });
     console.log(`🔌 MongoDB Connected: ${conn.connection.host}`);
     global.isMockDB = false;
+
+    // Drop the problematic bookmarks.url_1 index if it exists
+    try {
+      const usersCollection = conn.connection.db.collection('users');
+      const indexes = await usersCollection.indexes();
+      const hasDuplicateIndex = indexes.some(idx => idx.name === 'bookmarks.url_1');
+      if (hasDuplicateIndex) {
+        console.log('🧹 Problematic index "bookmarks.url_1" detected. Dropping it...');
+        await usersCollection.dropIndex('bookmarks.url_1');
+        console.log('✅ Dropped "bookmarks.url_1" index successfully.');
+      }
+    } catch (indexError) {
+      console.warn('⚠️ Warning: Could not drop "bookmarks.url_1" index:', indexError.message);
+    }
   } catch (error) {
     console.error(`❌ MongoDB connection error: ${error.message}`);
     console.warn('⚠️  Falling back to local JSON database storage.');
